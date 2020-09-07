@@ -4,13 +4,13 @@ on:
   repository_dispatch:
   release:
     types: published
-  # push:
-  #   branches:
-  #     - master
+  push:
+     branches:
+       - master
   schedule:
     - cron: 0 16 * * *
-  watch:
-    types: started
+  #watch:
+  #  types: started
     
 env:
   JD_COOKIE: ${{ secrets.JD_COOKIE }}
@@ -21,7 +21,6 @@ env:
 jobs:
     build:
         runs-on: ubuntu-latest
-        if: github.event.repository.owner.id == github.event.sender.id
         steps:
             - name: Checkout codes
               uses: actions/checkout@v2
