@@ -1,6 +1,5 @@
 name: JD_Sign_Action
 
-
 on:
   repository_dispatch:
   release:
